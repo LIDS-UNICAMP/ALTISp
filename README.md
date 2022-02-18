@@ -67,6 +67,18 @@ or
 $iftALTIS+ -i <input_ct_image> -o <output_label_mask>
 ```
 
+The ALTIS+ method is available from version 1.2 onward. Additionally, the docker provides support softwares for normalization and interpolation. For instance, to make the input image isotropic with voxel size of 1x1x1mm3, run the command: 
+
+```
+$iftInterp <input_ct_image> VOXEL 1. 1. 1. <output_label_mask>
+```
+
+In its turn, to normalize the input image to the range [0,4095] (standard 12 bits storage of medical images), one may run the command:
+
+```
+$iftNormalizeImage -i <input_ct_image> -a 0 -b 4095 -o <output_label_mask>
+```
+
 ## Contact
 
 If you have any questions or suggestions, please send us a message on the e-mail azaelmsousa@gmail.com.
